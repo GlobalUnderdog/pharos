@@ -1,20 +1,24 @@
 # Pharos
 
-> If docs are code, [Pharos](https://tutorialhub.globalunderdog.com/) provides continuous integration (CI).
+> If docs are code, [Pharos](https://tutorialhub.globalunderdog.com/) provides continuous integration.
 
-Pharos spots bugs in your documentation or tutorial code and keeps up with a rapidly changing product and underlying technology environment.
+Pharos uses continuous integration (CI) to spot bugs in documentation and tutorial code and keeps up with a rapidly changing product and technology environment.
 
 There are three reasons your doc code may have a bug:
 
-1. **Revisions**: an edit introduced a bug
-2. **Iterations**: the underlying API you are describing changed
-3. **Environment**: the underlying dependencies changed
+1. **Revision**: an edit introduced a bug
+2. **Iteration**: the underlying product changed as we iterate on our product
+3. **Provision**: the external dependencies that we provisioned changed
 
-Pharos can protect against all three of these by rerunning your code for these three reasons:
+Pharos can protect against all three by rerunning your code each time one of these three **tiggers** happens:
 
-1. Immediately after a session is created or updated (to catch revision bugs)
-2. At regular intervals as specified by the session (to catch iteration bugs)
-3. Whenever there are new versions of the available language or dependencies (to catch environment bugs)
+1. Immediately after docs are created or updated (to catch revision bugs)
+2. Weekly (to catch iteration bugs)
+3. Whenever there are new versions of the language or dependencies available (to catch provision bugs)
+
+The results of CI sessions are displayed on your dashboard and errors are reported:
+
+![Dashboard](dashboard.png)
 
 # From Code Snippets to Sessions
 
@@ -42,9 +46,6 @@ Pharos supports both of these use cases through a **Session**, a series of comma
     dependencies?: SemVer<string>[],
     // an optional list of dependencies with semver that are installed
     // before running code
-
-    repeat?: 'w' | 'd',
-    // whether to rerun the session weekly or daily.
 
     code: string | string[],
     // either a single string of code with newlines or
@@ -89,9 +90,3 @@ There are three operations we can perform on a session:
   ```bash
   curl https://pharos-api.globalunderdog.com/delete -u API_KEY -d "[id]"
   ```
-
-## Dashboard
-
-The results of CI sessions are displayed on your dashboard and errors are reported:
-
-![Dashboard](dashboard.png)
