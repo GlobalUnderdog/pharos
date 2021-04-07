@@ -2,7 +2,7 @@
 
 > If docs are code, [Pharos](https://tutorialhub.globalunderdog.com/) provides continuous integration (CI).
 
-Pharos can help spot bugs in your documentation or tutorial code and keep up with a rapidly changing product and underlying technology environment.
+Pharos spots bugs in your documentation or tutorial code and keeps up with a rapidly changing product and underlying technology environment.
 
 There are three reasons your doc code may have a bug:
 
