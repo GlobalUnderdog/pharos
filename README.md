@@ -70,7 +70,9 @@ If no semver is specified, only the latest version of the dependency is assumed.
 
 ## API
 
-There are three operations we can perform on a session:
+> To get your API key, [sign up for Pharos](https://tutorialhub.globalunderdog.com/signup).
+
+Once you have your key, there are three operations we can perform on a session:
 
 - **Upsert**: you can create or update a session when you create a new doc page or modify that doc page. The operation is idempotent and will do nothing is no code has changed in the session. Pass the data field as a Session object serialized json:
 
