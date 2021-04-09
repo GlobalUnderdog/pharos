@@ -75,7 +75,9 @@ There are three operations we can perform on a session:
 - **Upsert**: you can create or update a session when you create a new doc page or modify that doc page. The operation is idempotent and will do nothing is no code has changed in the session. Pass the data field as a Session object serialized json:
 
   ```bash
-  curl https://pharos-api.globalunderdog.com/upsert -u API_KEY -d "{...[Session Object]}"
+  curl https://pharos-api.globalunderdog.com/upsert
+    -u API_KEY
+    -d "{...[Session Object]}"
   ```
 
   If the `id` field already exists, the query updates the Session object. If the `id` field does not, the query creates a new Session object.
@@ -83,10 +85,14 @@ There are three operations we can perform on a session:
 - **Rerun**: you can rerun a session if you know that you have updated your API and want to test that your code. Pass the id field as data:
 
   ```bash
-  curl https://pharos-api.globalunderdog.com/rerun -u API_KEY -d "[id]"
+  curl https://pharos-api.globalunderdog.com/rerun
+    -u API_KEY
+    -d "[id]"
   ```
 
 - **Delete**: you can delete a session when you no longer need it anymore, e.g. if you are retiring a doc page. Pass the id field as data:
   ```bash
-  curl https://pharos-api.globalunderdog.com/delete -u API_KEY -d "[id]"
+  curl https://pharos-api.globalunderdog.com/delete
+    -u API_KEY
+    -d "[id]"
   ```
