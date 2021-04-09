@@ -16,7 +16,7 @@ Pharos can protect against all three by rerunning your code each time one of the
 2. Weekly (to catch iteration bugs)
 3. Whenever there are new versions of the language or dependencies available (to catch provision bugs)
 
-The results of CI sessions are displayed on your dashboard and errors are reported:
+The results of CI runs are displayed on your dashboard and errors are reported:
 
 ![Dashboard](dashboard.png)
 
